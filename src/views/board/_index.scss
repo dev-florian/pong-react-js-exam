@@ -1,3 +1,33 @@
-.Custom {
-  background-color: $background;
+.Board {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    outline: none;
+    position: absolute;
+    border: none;
+
+    &.clicked {
+      display: none
+    }
+  }
+
+  .data{
+    position: absolute;
+    top: 50px;
+    text-align: center;
+  }
+
+  canvas{
+    background-color: ghostwhite;
+    border: 1px solid;
+  }
 }
