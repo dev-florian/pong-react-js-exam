@@ -78,7 +78,7 @@ class Board extends Component {
 
             this.paddle1Y = this.paddle1Y + this.speed;
 
-            //ELEMENT BALL
+            //On fait bouger la balle ( tout les framespersecond)
             this.ballX += ballSpeedX;
             this.ballY += ballSpeedY;
 
@@ -94,13 +94,14 @@ class Board extends Component {
                     let deltaY = this.ballY - (this.paddle1Y + this.state.paddleHeight / 2);
                     ballSpeedY = deltaY * 0.60;
                 } else {
+
+                    //On ajoute au milieu et on reset
                     this.setState({score: this.state.score + 1});
                     ballReset();
                 }
             }
 
             //Faire rebondir la balle
-
             //Rebond en haut
             if (this.ballY > 550) {
                 ballSpeedY = -ballSpeedY
@@ -122,6 +123,8 @@ class Board extends Component {
         const ballReset = () => {
             this.ballX = canvas.width / 2;
             this.ballY = canvas.height / 2;
+
+            //On fait repartir la balle dans le bon sens ( gauche à droite )
             ballSpeedX = -ballSpeedX;
         };
 
@@ -154,9 +157,6 @@ class Board extends Component {
     }
 
     render() {
-
-
-
         return (
             <div className="Board">
                 <button style={{x: this.ballX, y: this.ballY}} className={this.state.clicked ? "clicked" : ""}
