@@ -21,12 +21,17 @@
   }
 
   .data{
-    position: absolute;
-    top: 50px;
-    text-align: center;
+    display: none;
+
+    &.clicked{
+      position: absolute;
+      top: 50px;
+      text-align: center;
+      display: block
+    }
   }
 
-  canvas{
+  canvas.clicked{
     background-color: ghostwhite;
     border: 1px solid;
   }

@@ -154,15 +154,20 @@ class Board extends Component {
     }
 
     render() {
+
+
+
         return (
             <div className="Board">
                 <button style={{x: this.ballX, y: this.ballY}} className={this.state.clicked ? "clicked" : ""}
-                        onClick={() => this.launchPong()}>
+                        onClick={() => this.launchPong()}><span>Let's go</span>
                 </button>
-                <canvas ref="canvas" width={800} height={600}/>
-                <div className="data">
+                <canvas className={this.state.clicked ? "clicked" : ""} ref="canvas" width={800} height={600}/>
+                <div className={this.state.clicked ? "clicked data" : "data"}>
                     <p className="score">Total defaite : {this.state.score}</p>
                 </div>
+
+
             </div>
         );
     }
